@@ -14,7 +14,7 @@ public class secondActivity extends AppCompatActivity implements AdapterView.OnI
     ListView lv2;
     TextView tv1, tv2;
     int x2;
-    String [][] country = {{ "Israel", "Japan", "China", "India", "Tailand"},{"Germany", "Italy", "France", "Greece", "Spain"},{"Egypt", "suoth Africa", "Ethiopia", "Morocco", "Nigeria"},{"Argrntina", "Brazil", "Chile", "peru", "Colombia"}};
+    String [][] country = {{ "Israel", "Japan", "China", "India", "Thailand"},{"Germany", "Italy", "France", "Greece", "Spain"},{"Egypt", "South Africa", "Ethiopia", "Morocco", "Nigeria"},{"Argentina", "Brazil", "Chile", "peru", "Colombia"}};
     String [][] ccp = {{"Jerusalem", "Tokyo", "Beijing", "New Delhi", "Bangkok", "Berlin", "Rome", "Paris", "Athens", "Madrid", "Cairo", "Cape Town", "Addis Ababa", "Rabat", "Abuja", "Buenos Aires", "Brasilia", "Santiago", "Lima", "Bogota" },
             {"8,712,000", "126,800,000", "1,386,000,000", "1,339,000,000", "69,040,000", "82,790,000", "60,590,000", "66,770,000", "10,770,000", "46,570,000", "97,550,000", "56,720,000", "105,000,000", "35,740,000", "190,900,000", "44,270,000", "209,300,000", "18,050,000", "32,170,000", "49,070,000" }};
 
@@ -23,7 +23,7 @@ public class secondActivity extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        lv2 = (ListView) findViewById(R.id.lv);
+        lv2 = (ListView) findViewById(R.id.lv2);
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = (TextView) findViewById(R.id.tv2);
 
