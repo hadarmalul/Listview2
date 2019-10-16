@@ -18,6 +18,14 @@ public class Countries extends AppCompatActivity implements AdapterView.OnItemCl
     String [][] ccp = {{"Jerusalem", "Tokyo", "Beijing", "New Delhi", "Bangkok","Moscow","Hanoi", "Berlin", "Rome", "Paris", "Athens", "Madrid","Stockholm","Oslo", "Cairo", "Cape Town", "Addis Ababa", "Rabat", "Abuja", "Algiers", "Khartoum", "Buenos Aires", "Brasilia", "Santiago", "Lima", "Bogota", "Washington D.C", "Ottawa" },
             {"8,712,000", "126,800,000", "1,386,000,000", "1,339,000,000", "69,040,000","142,100,000", "95,000,000", "82,790,000", "60,590,000", "66,770,000", "10,770,000", "46,570,000","10,300,000","5,300,000", "97,550,000", "56,720,000", "105,000,000", "35,740,000", "190,900,000", "42,200,000", "41,600,000", "44,270,000", "209,300,000", "18,050,000", "32,170,000", "49,070,000", "327,100,000", "37,600,000" }};
 
+    /**
+     * lv2 is a List view java component
+     * tv1, tv2 are a Text view java components
+     * x2 is the index for the countries in the same continent
+     * the matrix country contains the countries names
+     * the matrix ccp contains the capital cities and the populations of the countries
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,16 +35,26 @@ public class Countries extends AppCompatActivity implements AdapterView.OnItemCl
         tv1 = (TextView) findViewById(R.id.tv1);
         tv2 = (TextView) findViewById(R.id.tv2);
 
+        /**
+         * Connecting between the java components to the xml components
+         */
+
         Intent gi = getIntent();
         x2 = gi.getIntExtra("continent", -1);
 
         lv2.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         lv2.setOnItemClickListener(this);
 
+        /**
+         * Setting features to the list view
+         */
+
         ArrayAdapter<String> adp = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item,country[x2]);
         lv2.setAdapter(adp);
 
-
+        /**
+         * The adapter connects between the array and the list view
+         */
 
     }
 
@@ -44,9 +62,20 @@ public class Countries extends AppCompatActivity implements AdapterView.OnItemCl
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         tv1.setText("capital city: "+ ccp[0][x2*7+position]);
         tv2.setText("population: "+ ccp[1][x2*7+position]);
+
+        /**
+         * the function starts when you click on a country
+         * @param position is the position of the chosen continent
+         * prints the capital city and the population of the chosen country
+         */
     }
 
     public void back(View view) {
         finish();
+
+        /**
+         *  the function starts when the button back is clicked
+         *  returns to the main activity
+         */
     }
 }
