@@ -40,9 +40,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void next(View view) {
         if (x != 10) {
-            Intent si = new Intent(this, secondActivity.class);
-            si.putExtra("n", x);
+            Intent si = new Intent(this, Countries.class);
+            si.putExtra("continent", x);
             startActivity(si);
+        }
+        else {
+            Toast.makeText(this,"please choose a continent", Toast.LENGTH_SHORT ).show();
         }
     }
 }
